@@ -2,6 +2,7 @@ pipeline {
     agent any
 
     stages {
+    	echo "Hello"
         stage ('Compile') {
 
             steps {
