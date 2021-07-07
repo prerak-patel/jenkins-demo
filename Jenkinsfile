@@ -2,8 +2,8 @@ pipeline {
     agent any
 
     stages {
-        echo 'hello'
         stage ('Compile') {
+            echo 'Compile test branch'
             steps {
                 withMaven(maven : 'maven') {
                     sh 'mvn clean compile'
