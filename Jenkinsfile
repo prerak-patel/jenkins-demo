@@ -2,8 +2,7 @@ pipeline {
     agent any
 
     stages {
-        stage ('Compile') {
-            echo 'Compile test branch'
+        stage ('Compile Stage') {
             steps {
                 withMaven(maven : 'maven') {
                     sh 'mvn clean compile'
@@ -11,7 +10,7 @@ pipeline {
             }
         }
 
-        stage ('Test') {
+        stage ('Testing Stage') {
 
             steps {
                 withMaven(maven : 'maven') {
@@ -21,7 +20,7 @@ pipeline {
         }
 
 
-        stage ('Deploy') {
+        stage ('Deployment Stage') {
             steps {
                 withMaven(maven : 'maven') {
                     sh 'mvn deploy'
