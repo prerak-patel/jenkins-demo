@@ -6,7 +6,7 @@ pipeline {
         stage ('Compile') {
             steps {
                 withMaven(maven : 'maven') {
-                    echo 'compiling source code'
+                    
                     sh 'mvn clean compile'
                 }
             }
